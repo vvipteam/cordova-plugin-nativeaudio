@@ -82,7 +82,7 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
 					voices = data.getInt(3);
 				}
 
-				String fullPath = "www/".concat(assetPath);
+				String fullPath = assetPath; // [vvip] // was "www/".concat(assetPath)
 
 				Context ctx = cordova.getActivity().getApplicationContext();
 				AssetManager am = ctx.getResources().getAssets();
@@ -201,13 +201,13 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
 	}
 	@Override
 	protected void pluginInitialize() {
-		AudioManager am = (AudioManager)cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
+		// [vvip] // AudioManager am = (AudioManager)cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
 
-	        int result = am.requestAudioFocus(this,
-	                // Use the music stream.
-	                AudioManager.STREAM_MUSIC,
-	                // Request permanent focus.
-	                AudioManager.AUDIOFOCUS_GAIN);
+	    // [vvip] //     int result = am.requestAudioFocus(this,
+	    // [vvip] //             // Use the music stream.
+	    // [vvip] //             AudioManager.STREAM_MUSIC,
+	    // [vvip] //             // Request permanent focus.
+	    // [vvip] //             AudioManager.AUDIOFOCUS_GAIN);
 
 		// Allow android to receive the volume events
 		this.webView.setButtonPlumbedToJs(KeyEvent.KEYCODE_VOLUME_DOWN, false);
