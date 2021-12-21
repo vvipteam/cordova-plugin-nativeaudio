@@ -4,12 +4,14 @@ Cordova / PhoneGap 3.5+ extension for Native Audio playback, aimed at HTML5 gami
 
 ## About the Fork
 
-Fix hard coded resource path
-/src/android/NativeAudio.java
-Line 85: change "public/".concat(assetPath) to assetPath
+### Fix hard coded resource path  
+- src/android/NativeAudio.java - line 85: change "public/".concat(assetPath) to assetPath  
 
-Fix background music interruption on plugin init on Android and iOS
-https://github.com/floatinghotpot/cordova-plugin-nativeaudio/pull/139/files
+### Fix background music interruption on plugin init on Android and iOS  
+- src/android/NativeAudio.java - commented: lines 204-211  
+- src/ios/NativeAudio.m - commented: lines 32, 35, 47-48  
+
+Details: https://github.com/floatinghotpot/cordova-plugin-nativeaudio/pull/139/files  
 
 ## Contents
 
