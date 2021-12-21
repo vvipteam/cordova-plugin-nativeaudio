@@ -2,6 +2,15 @@
 
 Cordova / PhoneGap 3.5+ extension for Native Audio playback, aimed at HTML5 gaming and audio applications which require minimum latency, polyphony and concurrency.
 
+## About the Fork
+
+Fix hard coded resource path
+/src/android/NativeAudio.java
+Line 85: change "public/".concat(assetPath) to assetPath
+
+Fix background music interruption on plugin init on Android and iOS
+https://github.com/floatinghotpot/cordova-plugin-nativeaudio/pull/139/files
+
 ## Contents
 
 1. [Description](#description)
